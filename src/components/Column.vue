@@ -35,12 +35,18 @@ export default {
     style () {
       return {
         maxWidth: this.percentageSize,
-        flex: `0 0 ${this.percentageSize}`,
-        marginLeft: this.offset && this.getColumnSize(this.offset)
+        flex: this.percentageSize && `0 0 ${this.percentageSize}`,
+        marginLeft: this.percentageOffset
       }
     },
     percentageSize () {
-      return this.size && this.getColumnSize(this.size)
+      return this.size && this.getColumnSize(this.breakpointSize || this.size)
+    },
+    percentageOffset () {
+      if (!this.offset) return
+      if (this.breakpoint && this.breakpoint.name === 'xs') return
+
+      return this.getColumnSize(this.offset)
     },
     classes () {
       return {
@@ -51,10 +57,10 @@ export default {
       }
     },
     breakpoint () {
-      return this.$store && this.$store.getters.breakpoint
+      return this.$store && this.$store.getters['breakpoints/breakpoint']
     },
     breakpoints () {
-      return this.$store && this.$store.getters.breakpoints
+      return this.$store && this.$store.getters['breakpoints/breakpoints']
     },
     columnBreakpoints () {
       if (!this.breakpoints) return

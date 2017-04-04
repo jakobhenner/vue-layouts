@@ -2,14 +2,16 @@
   <div id="app">
     <container margin-top>
       <row gutter-vertical="x-large">
-        <column :size="6">1</column>
-        <column margin-top :offset="2">2</column>
+        <column :size="6" :sizes="{xs: 12}">1</column>
+        <column :offset="2">2</column>
       </row>
     </container>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 import Container from '@/components/Container';
 import Row from '@/components/Row';
 import Column from '@/components/Column';
@@ -21,6 +23,24 @@ export default {
     Row,
     Column
   },
+  methods: {
+    ...mapActions([
+      'breakpoints/setViewport'
+    ]),
+    onResize () {
+      this['breakpoints/setViewport']({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    }
+  },
+  created () {
+    window.addEventListener('resize', this.onResize)
+    this.onResize()
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
+  }
 };
 </script>
 

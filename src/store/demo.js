@@ -7,12 +7,10 @@ Vue.use(Vuex)
 /**
  * Modules
  */
-import grid from './modules/grid.js'
-import breakpoints from './modules/breakpoints.js'
+import breakpoints from './breakpoints'
 
 const store = new Vuex.Store({
   modules: {
-    grid,
     breakpoints
   },
   plugins: process.env.NODE_ENV !== 'production'

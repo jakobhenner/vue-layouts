@@ -1,8 +1,8 @@
-import {
-  SET_VIEWPORT_SIZE
-} from '../mutation-types'
+
+export const SET_VIEWPORT_SIZE = 'SET_VIEWPORT_SIZE'
 
 export default {
+  namespaced: true,
   state: {
     width: window.innerWidth,
     height: window.innerHeight,
@@ -71,6 +71,11 @@ export default {
         // console.log('%c' + breakpoint.name, 'font-weight: bold', query, breakpoint.matches)
       })
     },
+  },
+  actions: {
+    setViewport ({ state, commit }, payload) {
+      commit(SET_VIEWPORT_SIZE, payload)
+    }
   },
   getters: {
     width: state => state.width,
