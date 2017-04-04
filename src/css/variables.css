@@ -1,0 +1,9 @@
+/*
+* === VARIABLES ===
+*/
+:root {
+  --grid-gutter-base: 1.25em;
+  --grid-gutter-multiplier-x-large: 4.5;
+  --grid-gutter-multiplier-large: 2;
+  --grid-gutter-multiplier-small: 0.25;
+}

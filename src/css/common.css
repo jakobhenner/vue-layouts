@@ -1,0 +1,111 @@
+/*
+* === GUTTER ===
+* Use template:
+* [type]-[axis/direction]-[size]
+*/
+.container {
+  padding-left: calc(var(--grid-gutter-base));
+  padding-right: calc(var(--grid-gutter-base));
+}
+
+.row {
+  margin-left: calc(var(--grid-gutter-base) / -2);
+  margin-right: calc(var(--grid-gutter-base) / -2);
+}
+
+.column {
+  padding-left: calc(var(--grid-gutter-base) / 2);
+  padding-right: calc(var(--grid-gutter-base) / 2);
+}
+
+/*
+* === Gutter ===
+*/
+
+/* Horisontal gutter default */
+.gutterHorisontal {
+  padding-left: var(--grid-gutter-base);
+  padding-right: var(--grid-gutter-base);
+}
+.gutterHorisontalSmall {
+  padding-left: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-small));
+  padding-right: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-small));
+}
+/* Horisontal gutter large */
+.gutterHorisontalLarge {
+  padding-left: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-large));
+  padding-right: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-large));
+}
+.gutterHorisontalXLarge {
+  padding-left: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-x-large));
+  padding-right: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-x-large));
+}
+
+
+/* Vertical gutter default */
+.gutterVertical {
+  padding-top: var(--grid-gutter-base);
+  padding-bottom: var(--grid-gutter-base);
+  /*composes: verticalGutter from './debug.css';*/
+}
+.gutterVerticalSmall {
+  padding-top: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-small));
+  padding-bottom: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-small));
+  /*composes: verticalGutterSmall from './debug.css';*/
+}
+.gutterVerticalLarge {
+  padding-top: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-large));
+  padding-bottom: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-large));
+  /*composes: verticalGutterLarge from './debug.css';*/
+}
+.gutterVerticalXLarge {
+  padding-top: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-x-large));
+  padding-bottom: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-x-large));
+  /*composes: verticalGutterXLarge from './debug.css';*/
+}
+
+/* Resets */
+.gutterHorisontalNone {
+  padding-left: 0;
+  padding-right: 0;
+}
+.gutterVerticalNone {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+/*
+* === Margin ===
+*/
+
+.marginBottom {
+  margin-bottom: calc(var(--grid-gutter-base) / 1);
+}
+.marginBottomSmall {
+  margin-bottom: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-small));
+}
+.marginBottomLarge {
+  margin-bottom: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-large));
+}
+.marginBottomXLarge {
+  margin-bottom: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-x-large));
+}
+
+.marginTop {
+  margin-top: calc(var(--grid-gutter-base) / 1);
+}
+.marginTopSmall {
+  margin-top: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-small));
+}
+.marginTopLarge {
+  margin-top: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-large));
+}
+.marginTopXLarge {
+  margin-top: calc(var(--grid-gutter-base) * var(--grid-gutter-multiplier-x-large));
+}
+
+.marginHorisontalNone {
+  margin-left: 0;
+  margin-right: 0;
+}
