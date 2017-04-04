@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import gutter from './gutter'
+import gutter from '../mixins/gutter'
 
 export default {
   mixins: [gutter]
 }
 </script>
 
-<style module src="../css/grid.css">
+<style module src="../css/common.css"></style>
