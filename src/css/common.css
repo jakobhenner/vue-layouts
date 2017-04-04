@@ -3,6 +3,8 @@
 * Use template:
 * [type]-[axis/direction]-[size]
 */
+@import './variables.css';
+
 .container {
   padding-left: calc(var(--grid-gutter-base));
   padding-right: calc(var(--grid-gutter-base));
