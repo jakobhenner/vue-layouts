@@ -8,7 +8,7 @@ export default {
     marginTop: [Boolean, String],
     supportedGutterTypes: {
       type: Array,
-      default () {
+      default: function () {
         return [
           'gutterVertical',
           'marginBottom',
