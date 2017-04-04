@@ -40,7 +40,7 @@ export default {
       }
     },
     percentageSize () {
-      return this.size && this.getColumnSize(this.breakpointSize || this.size)
+      return this.breakpointSize && this.getColumnSize(this.breakpointSize)
     },
     percentageOffset () {
       if (!this.offset) return
@@ -68,7 +68,7 @@ export default {
       .filter(breakpoint => this.sizes[breakpoint.name])
     },
     breakpointSize () {
-      if (!this.columnBreakpoints) return
+      if (!this.columnBreakpoints) return this.size
       const breakpoint = this.columnBreakpoints.find(breakpoint => breakpoint.name === this.breakpoint.name)
       if (breakpoint) return this.sizes[breakpoint.name]
 
