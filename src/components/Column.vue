@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import gutter from '@/mixins/gutter'
+import gutter from '../mixins/gutter'
 
 export default {
   mixins: [gutter],
@@ -77,7 +77,7 @@ export default {
 }
 </script>
 
-<style module src="@/css/common.css"></style>
+<style module src="../css/common.css"></style>
 
 <style module="column">
 .common {
