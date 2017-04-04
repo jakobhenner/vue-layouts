@@ -8,4 +8,4 @@ export default {
   Column
 }
 
-export { module } from './store/breakpoints'
+export { default as breakpoints } from './store/breakpoints'
