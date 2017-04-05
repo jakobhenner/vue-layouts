@@ -31,6 +31,5 @@ export default {
 .maxWidth {
   margin-left: auto;
   margin-right: auto;
-  background-color: blue;
 }
 </style>
