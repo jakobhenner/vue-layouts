@@ -1,6 +1,3 @@
-import camelCase from 'lodash/fp/camelCase'
-import upperFirst from 'lodash/fp/upperFirst'
-
 export default {
   props: {
     gutterVertical: [Boolean, String],
@@ -18,12 +15,21 @@ export default {
     }
   },
   methods: {
+    kebabToCamel (str) {
+      if (!str || typeof str !== 'string') return
+      const array = str.split('-')
+      let camel = ''
+      array.forEach(substring => {
+        camel += substring.charAt(0).toUpperCase() + substring.slice(1)
+      })
+      return camel
+    },
     getGutter (type) {
       // Find multiplier value on instance [e.g. large, x-large, small]
       const multiplier = this[type]
 
       // Convert from kebab to CamelCase
-      const formattedName = multiplier && upperFirst(camelCase(multiplier))
+      const formattedName = multiplier && this.kebabToCamel(multiplier)
 
       // Stringify className and find class
       const className = this.$style[`${type}${formattedName}`]
