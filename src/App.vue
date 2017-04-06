@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <container margin-top>
-      <row gutter-vertical="x-large">
-        <column :size="6" :sizes="{xs: 12}">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <!-- Grid -->
+    <container gutter-vertical="x-large">
+      <h1>vue-layouts</h1>
+    </container>
+    <container margin-bottom="large">
+      <row v-for="row in [1, 2, 3, 4, 6, 12]" :key="row">
+        <column v-for="column in row" :key="column" margin-bottom>
+          <div class="test"></div>
         </column>
-        <column :offset="2">
-          Lorem dolor twice dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </row>
+    </container>
+
+    <container margin-bottom>
+      <row v-for="row in [2, 3, 4]" :key="row">
+        <column v-for="column in row" :sizes="{sm: 12}" :key="column" margin-bottom>
+          <div class="test"></div>
         </column>
       </row>
     </container>
@@ -55,10 +64,15 @@ export default {
   --grid-gutter-multiplier-large: 2;
   --grid-gutter-multiplier-small: 0.25;
 }
-
-#app {
+body {
+  margin: 0;
   font-family: -apple-system, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.test {
+  background-color: grey;
+  height: 4em;
 }
 </style>

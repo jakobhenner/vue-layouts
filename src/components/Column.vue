@@ -79,6 +79,9 @@ export default {
           return this.sizes[breakpoint.name]
         }
       }
+
+      // Otherwise, return default (if available)
+      return this.sizes.default
     }
   }
 }
