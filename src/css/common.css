@@ -5,17 +5,24 @@
 */
 @import './variables.css';
 
+.common {
+  box-sizing: border-box;
+}
+
 .container {
+  composes: common;
   padding-left: calc(var(--grid-gutter-base));
   padding-right: calc(var(--grid-gutter-base));
 }
 
 .row {
+  composes: common;
   margin-left: calc(var(--grid-gutter-base) / -2);
   margin-right: calc(var(--grid-gutter-base) / -2);
 }
 
 .column {
+  composes: common;
   padding-left: calc(var(--grid-gutter-base) / 2);
   padding-right: calc(var(--grid-gutter-base) / 2);
 }
