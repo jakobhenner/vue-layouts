@@ -1,4 +1,4 @@
-# vue-grid
+# vue-layouts
 
 > A collection of simple layout components
 

@@ -92,5 +92,23 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakobhenner/vue-layouts.git"
+  },
+  "keywords": [
+    "vue",
+    "layout",
+    "layouts",
+    "grid"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakobhenner/vue-layouts/issues"
+  },
+  "homepage": "https://github.com/jakobhenner/vue-layouts#readme"
 }
