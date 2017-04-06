@@ -1,9 +1,8 @@
 {
-  "name": "vue-grid",
+  "name": "vue-layouts",
   "version": "1.0.0",
   "description": "A collection of simple layout components",
   "author": "Jakob Henner <jakobhenner@gmail.com>",
-  "private": true,
   "main": "src/build.js",
   "scripts": {
     "dev": "node build/dev-server.js",
