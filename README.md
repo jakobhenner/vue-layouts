@@ -80,6 +80,21 @@ And if you only want the content column to fill up half of the screen, use the `
 </column>
 ```
 
+Columns and rows can be nested indefinitely:
+
+```
+<container>
+  <row>
+    <column>
+      <row>
+	      <column></column>
+      </row>
+    </column>
+    <column>50%</column>
+  </row>
+</container>
+```
+
 #### Properties
 
 - `columns`: Number  
@@ -138,6 +153,21 @@ The variables can be set in any CSS file exposed throughout the app.
 In the future, I'm considering adding more multipliers and perhaps have a distinction between vertical and horizontal spacing.
 
 For now, I've found these to be quite powerful in even complex layout and typographic contexts.
+
+### Example
+Here's an example using all of them - luckily everything should be pretty easy to understand:
+
+```
+<container gutter-vertical="x-large">
+  <row margin-bottom>
+    <column gutter-vertical></column>
+  </row>
+  <row>
+    <column></column>
+  </row>  
+</container>
+```
+
 
 ## CSS
 The project is dependent on PostCSS and CSS modules and its workflow is based on the popular [vue-webpack-boilerplate](https://github.com/vuejs-templates/webpack).
@@ -250,8 +280,8 @@ On more complex sites it's recommend to abstract the `sizes` object into constan
 
 ```
 export const COLUMN_SIZES_HALF = {
-  default: 6
-  xs: 12
+	default: 6
+	xs: 12
 }
 
 export const COLUMN_SIZES_THIRDS = {
