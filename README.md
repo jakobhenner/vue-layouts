@@ -19,20 +19,86 @@ Align columns horisontally. Basically just a wrapper for flexbox's justify-conte
 	- `'flex-end'`
 	- `'space-between'`
 
-- `gutterless`: Boolean
-Removes the gutter. Use if you want no gap between child columns (you need to put the property on them as well). Makes the `Container` component redundant.
+- `gutterless`: Boolean  
+Removes the gutter. Use if you want to remove the gap between child columns - you need to put the same property/attribute on them as well.
 
 ### Column
-The exciting component that makes every layout possible. The default `Column` without any set properties will have a fluid width filling it's container and a standard horizontal gutter on both sides.
+The exciting component that makes every layout possible. The default `Column` without any set properties will have a fluid width filling its container and a standard horizontal gutter on both sides:
+
+```
+<container>
+  <row>
+    <column>Full width!</column>
+  </row>
+</container>
+```
+If you are not actually setting the size of the columns, the above example is redundant, just use the Container instead:
+
+```
+<container>
+  Full width!
+</container>
+```
+
+Here are two columns side-by-side, no need to set an explicit size, if all columns should have an equal size:
+
+```
+<container>
+  <row>
+    <column>50%</column>
+    <column>50%</column>
+  </row>
+</container>
+```
+Let's say you want to create a sidebar which has a column size of 4 and you want the content to fill up the remaining 8 columns. Well easy:
+
+```
+<container>
+  <row>
+    <column :size="4">
+      <aside>
+        Sidebar
+      </aside>      
+    </column>
+    <column>
+      Content!
+    </column>
+  </row>
+</container>
+```
+
+And if you only want the content column to fill up half of the screen, use the `offset` property:
+
+```
+<column :size="4">
+  <aside>
+    Sidebar
+  </aside>      
+</column>
+<column :offset="2">
+  Content!
+</column>
+```
 
 #### Properties
+
 - `columns`: Number  
 Number of columns in the grid. Default value is 12 and should probably not be changed until it's part of the store.
-- `size`: Number
-- `sizes`: Object
-- `offset`: Number
-- `gutterless`: Boolean
-- `Fit`: Boolean
+
+- `size`: Number  
+Set column size ranging from [1, columns]. A value of 12 will result in a 100% width column, while a value of 6 will result in 50% width.
+
+- `sizes`: Object   
+See **Store** chapter for more. In short this property enables us to define the column width in different breakpoint scenarios.
+
+- `offset`: Number  
+As the `size` property, the offset can be set ranging from [1, columns] and defines the left margin. For now, the offset value will be ignored on the `xs` breakpoint. But the property will in the future get the pleasant company of an `offsets` property, that gives more fine grain control over the different breakpoints.
+
+- `gutterless`: Boolean  
+Removes the horizontal gutter
+
+- `fit`: Boolean  
+Fit the column size to its content. Useful for arranging content in a row, where it visually doesn't make sense to set an explicit size while still preserving the global horizontal gutter. For instance, two buttons that need to be shown next to each other.
 
 
 ## Shared properties
@@ -184,8 +250,8 @@ On more complex sites it's recommend to abstract the `sizes` object into constan
 
 ```
 export const COLUMN_SIZES_HALF = {
-	default: 6
-	xs: 12
+  default: 6
+  xs: 12
 }
 
 export const COLUMN_SIZES_THIRDS = {
