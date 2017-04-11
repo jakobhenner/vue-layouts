@@ -1,6 +1,6 @@
 {
   "name": "vue-layouts",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A collection of simple layout components",
   "author": "Jakob Henner <jakobhenner@gmail.com>",
   "main": "src/build.js",
